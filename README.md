@@ -19,4 +19,4 @@ Tras analizar la imagen, el servicio proporciona resultados al usuario. Estos re
 Es importante tener en cuenta que el rendimiento y la precisión del reconocimiento de imágenes pueden variar en función del conjunto de datos utilizado para entrenar el modelo, la calidad de la imagen y la complejidad de los elementos que se intentan identificar.
 
 
-![image](https://github.com/AxelAceves/Scaneo-WL5/assets/149019864/e55bde75-9ba8-44b1-8d48-ff97fbfcbf36)
+![image](https://github.com/AxelAceves/Scaneo-WL5/assets/149019864/42ca62d6-0586-4cc7-81f6-6423c2a5fb8e)
