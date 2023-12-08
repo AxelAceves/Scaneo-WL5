@@ -142,20 +142,15 @@ function GuardadNeurona() {
 
 function CargarNeurona() {
   console.log("Cargando una Neurona");
-  knn.load("./data/NeuronaKNN.json", function() {
+  const url = "https://raw.githubusercontent.com/alswnet/NocheProgramacion/master/Cursos/07_Inteligencia_Artificial_ML5/07.9-Entrenar-Desde-Folder/p5/data/NeuronaKNN.json";
+  knn.load(url, function() {
     console.log("Neurona Cargada knn");
-    CartaMensaje.innerText = "Neurona cargana de archivo";
+    CartaMensaje.innerText = "Neurona cargada desde URL";
     CargandoNeurona = true;
   });
 }
 
-function CargarFolder() {
-  noLoop();
-  EntrenarFolder = true;
-  console.log("Cargando del Folder");
-  CartaMensaje.innerText = "Cargando del Folder";
-  loadJSON("./data/EntrenarFolder.json", ProcesarArchivo);
-}
+
 
 function ProcesarArchivo(Data) {
   Etiquetas = Data["Entrenar"];
@@ -193,3 +188,45 @@ function EntrenarArchivo() {
     EntrenarFolder = false;
   }
 }
+
+ 
+
+// Espera a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+  // Inicialización de la barra lateral (Sidenav) con Materialize CSS
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems);
+
+  // Agrega un evento de clic al enlace "Cerrar" con JavaScript puro
+  var cerrarEnlace = document.getElementById('cerrarSidebar');
+  cerrarEnlace.addEventListener('click', function(event) {
+    event.preventDefault(); // Previene el comportamiento predeterminado del enlace
+    
+    // Muestra el elemento <ul> con ID 'slide-out'
+    instances[0].open(); // Abre la barra lateral
+  });
+
+  // Agrega un evento de clic al enlace "Cerrar" con JavaScript puro
+  var cerrarEnlace = document.getElementById('cerrarSidebar');
+  cerrarEnlace.addEventListener('click', function(event) {
+    event.preventDefault(); // Previene el comportamiento predeterminado del enlace
+    
+    // Oculta el elemento <ul> con ID 'slide-out'
+    var sidebar = document.getElementById('slide-out');
+    sidebar.style.display = 'none';
+  });
+});
+
+// Otra forma alternativa usando jQuery
+$(document).ready(function(){
+  // Inicialización de la barra lateral (Sidenav) con jQuery
+  $('.sidenav').sidenav();
+
+  // Agrega un evento de clic al enlace "Cerrar" con jQuery
+  $('#cerrarSidebar').on('click', function(event) {
+    event.preventDefault(); // Previene el comportamiento predeterminado del enlace
+    
+    // Oculta el elemento <ul> con ID 'slide-out'
+    $('#slide-out').hide();
+  });
+});
