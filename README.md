@@ -19,4 +19,6 @@ Tras analizar la imagen, el servicio proporciona resultados al usuario. Estos re
 Es importante tener en cuenta que el rendimiento y la precisión del reconocimiento de imágenes pueden variar en función del conjunto de datos utilizado para entrenar el modelo, la calidad de la imagen y la complejidad de los elementos que se intentan identificar.
 
 link donde puedes probar el codigo ya echo :  https://codepen.io/Axel-Rous/pen/KKJEMER?editors=1010
-![image](https://github.com/AxelAceves/Scaneo-WL5/assets/149019864/42ca62d6-0586-4cc7-81f6-6423c2a5fb8e)
+![image](https://github.com/AxelAceves/Scaneo-WL5/assets/149019864/60a5e378-ac3e-49d0-8259-db573e55fdbc)
+![image](https://github.com/AxelAceves/Scaneo-WL5/assets/149019864/006c5bb5-4238-4f6e-afe6-0bc670515825)
+
