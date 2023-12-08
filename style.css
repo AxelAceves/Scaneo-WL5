@@ -1,0 +1,119 @@
+/* Variables para colores */
+:root {
+  --main-bg-color: #282c34;
+  --primary-color: #fff;
+  --secondary-color: #003366;
+  --accent-color: #ff6600;
+}
+
+/* Estilos generales */
+.container {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--primary-color);
+}
+
+.row {
+  margin-top: 20px;
+}
+
+.card {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.col {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-panel {
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.btn {
+  border-radius: 20px;
+  margin: 5px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Colores específicos */
+.teal.darken-4 {
+  background-color: var(--secondary-color);
+}
+
+.orange.accent-3 {
+  background-color: var(--accent-color);
+}
+
+.BotonesEntrenar {
+  background-color: #4CAF50; /* Cambia el color de fondo a tu preferencia */
+}
+
+/* Estilos de campos de entrada */
+.input-field {
+  margin-bottom: 20px;
+}
+
+.input-field input[type="text"] {
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.input-field input[type="text"]:focus {
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.input-field label {
+  color: var(--primary-color);
+}
+
+/* Efecto de onda */
+#waves-effect {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+#waves-effect:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: -100%;
+  left: -100%;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.5s ease;
+}
+
+#waves-effect:hover:after {
+  top: -50%;
+  left: -50%;
+}
+/* Agregar color naranja a los botones con clase orange */
+.orange {
+  background-color: #ff6600; /* Cambia el color naranja según tu preferencia */
+  color: #fff; /* Cambia el color del texto si es necesario */
+}
+.separator {
+  width: 100%;
+  margin: 20px 0;
+  border-bottom: 1px solid #ccc; /* Color gris para las líneas */
+}
