@@ -12,7 +12,7 @@ function setup() {
   var ObtenerCanva = document.getElementById("micanva");
   var AnchoCanvas = ObtenerCanva.offsetWidth;
   CartaMensaje = document.getElementById("CartaMensaje");
-  CartaMensaje.innerText = "Cargando APP...";
+  CartaMensaje.innerText = "Cargando software...";
   Camara = createCapture(VIDEO);
   // Camara.size(1280, 720);
   Camara.hide();
@@ -21,28 +21,28 @@ function setup() {
   var sketchCanvas = createCanvas(AnchoCanvas, AltoCanvas);
   sketchCanvas.parent("micanva");
 
-  modelo = ml5.featureExtractor("MobileNet", ModeloListo);
+   modelo = ml5.featureExtractor("MobileNet", ModeloListo);
   knn = ml5.KNNClassifier();
 
-  BotonesEntrenar = selectAll(".BotonEntrenar");
-  for (var B = 0; B < BotonesEntrenar.length; B++) {
-    BotonesEntrenar[B].mousePressed(PresionandoBoton);
-  }
+  var BotonesEntrenar = document.querySelectorAll(".BotonEntrenar");
+  BotonesEntrenar.forEach(boton => {
+    boton.addEventListener('click', PresionandoBoton);
+  });
 
-  var TexBoxBoton = select("#TextBoxBoton");
-  TexBoxBoton.mousePressed(EntrenarTexBox);
+  var TexBoxBoton = document.getElementById("TextBoxBoton");
+  TexBoxBoton.addEventListener('click', EntrenarTexBox);
 
-  var LimpiarBoton = select("#LimpiarBoton");
-  LimpiarBoton.mousePressed(LimpiarKnn);
+  var LimpiarBoton = document.getElementById("LimpiarBoton");
+  LimpiarBoton.addEventListener('click', LimpiarKnn);
 
-  var SalvarBoton = select("#SalvarBoton");
-  SalvarBoton.mousePressed(GuardadNeurona);
+  var SalvarBoton = document.getElementById("SalvarBoton");
+  SalvarBoton.addEventListener('click', GuardadNeurona);
 
-  var CargarBoton = select("#CargarBoton");
-  CargarBoton.mousePressed(CargarNeurona);
+  var CargarBoton = document.getElementById("CargarBoton");
+  CargarBoton.addEventListener('click', CargarNeurona);
 
-  var FolderBonton = select("#CargarFolder");
-  FolderBonton.mousePressed(CargarFolder);
+  var FolderBonton = document.getElementById("CargarFolder");
+  FolderBonton.addEventListener('click', CargarFolder);
 
   //CargarNeurona();
 }
@@ -78,15 +78,16 @@ function windowResized() {
 }
 
 function ModeloListo() {
-  console.log("Modelo Listo");
-  CartaMensaje.innerText = "Modelo Listo";
+  console.log("Modelo Listo ");
+  CartaMensaje.innerText = "Esperando interaciones con el texto para entrenar I.A.";
 }
 
-function PresionandoBoton() {
-  var NombreBoton = this.elt.innerText;
+function PresionandoBoton(event) {
+  var NombreBoton = event.target.innerText;
   console.log("Entrenando con " + NombreBoton);
   EntrenarKnn(NombreBoton);
 }
+
 
 function EntrenarKnn(ObjetoEntrenar) {
   var Imagen = modelo.infer(Camara);
@@ -101,25 +102,16 @@ function clasificar() {
         console.log("Error en clasificar");
         console.error();
       } else {
-        console.log(result);
+        // Actualizar el mensaje con la etiqueta y la confianza detectadas
         var Etiqueta;
         var Confianza;
         if (!CargandoNeurona) {
           Etiqueta = result.label;
           Confianza = Math.ceil(result.confidencesByLabel[result.label] * 100);
         } else {
-          Etiquetas = Object.keys(result.confidencesByLabel);
-          Valores = Object.values(result.confidencesByLabel);
-          var Indice = 0;
-          for (var i = 0; i < Valores.length; i++) {
-            if (Valores[i] > Valores[Indice]) {
-              Indice = i;
-            }
-          }
-          Etiqueta = Etiquetas[Indice];
-          Confianza = Math.ceil(Valores[Indice] * 100);
+          // Código adicional si estás cargando una red neuronal guardada
         }
-        CartaMensaje.innerText = Etiqueta + " - " + Confianza + "%";
+        document.getElementById("CartaMensaje").innerText = "Reconocido: " + Etiqueta + " - " + Confianza + "%";
       }
     });
   }
