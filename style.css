@@ -88,6 +88,7 @@
   display: inline-block;
   position: relative;
   overflow: hidden;
+   transition: transform 0.3s ease; 
 }
 
 #waves-effect:after {
@@ -101,6 +102,13 @@
   pointer-events: none;
   background-color: rgba(255, 255, 255, 0.3);
   transition: all 0.5s ease;
+}
+/* Efecto de transición al presionar */
+
+
+/* Efecto de escala al hacer clic */
+.waves-effect:hover {
+  transform: scale(1.05); 
 }
 
 #waves-effect:hover:after {
@@ -116,4 +124,194 @@
   width: 100%;
   margin: 20px 0;
   border-bottom: 1px solid #ccc; /* Color gris para las líneas */
+}
+
+
+
+
+
+
+element.style {
+    transform: translateX(0%);
+}
+ul:not(.browser-default) {
+    padding-left: 0;
+    list-style-type: none;
+}
+.sidenav {
+    position: fixed;
+    width: 300px;
+    left: 0;
+    top: 0;
+    margin: 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    height: 100%;
+    height: calc(100% + 60px);
+    height: -moz-calc(100%);
+    padding-bottom: 60px;
+    background-color: #fff;
+    z-index: 999;
+    overflow-y: auto;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);
+}
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+hoja de estilo del agente de usuario
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+body {
+    color: rgba(0,0,0,0.87);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+@media only screen and (min-width: 0)
+html {
+    font-size: 14px;
+}
+html {
+    line-height: 1.5;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-weight: normal;
+    color: rgba(0,0,0,0.87);
+}
+html {
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+/* Estilo para el círculo */
+.circle {
+  width: 100px; /* Puedes ajustar este valor para cambiar el tamaño del círculo */
+  height: 100px; /* Puedes ajustar este valor para cambiar el tamaño del círculo */
+  border-radius: 50%;
+  overflow: hidden;
+  position: fixed;
+  top: 20px; /* Puedes ajustar este valor para cambiar la distancia desde la parte superior */
+  left: 20px; /* Puedes ajustar este valor para cambiar la distancia desde el borde izquierdo */
+  background-color: #f0f0f0; /* Color de fondo del círculo */
+}
+
+/* Estilo para la imagen dentro del círculo */
+.img-content {
+  width: 100%; /* La imagen ocupará todo el ancho del círculo */
+  height: auto; /* Se ajusta automáticamente la altura según el ancho */
+  display: block;
+  margin: auto;
+}
+
+
+/* Estilo para las etiquetas <a> */
+.background a {
+  position: absolute;
+  color: white;
+  z-index: 1; /* Asegura que los enlaces estén por encima de la imagen */
+}
+
+/* Estilo para la imagen dentro del contenedor */
+.background img {
+  width: 100%; 
+  height: auto; 
+  display: block;
+  margin: auto;
+  z-index: 0;
+}
+
+/* Estilo para el contenedor padre */
+.corner-image {
+  position: fixed;
+  bottom: 20px; /* Distancia desde la parte inferior */
+  left: 20px; /* Distancia desde el borde izquierdo */
+  z-index: 1; /* Asegura que esté por encima de otros elementos */
+  display: flex; /* Permite posicionar elementos hijos */
+}
+
+
+/* Estilo para el contenedor hijo */
+.bottom-left {
+  position: relative;
+  z-index: 2; /* Asegura que esté por encima de la imagen */
+  margin-top: -60px; /* Ajusta para alinear los elementos */
+}
+
+/* Estilo para los elementos <a> dentro del contenedor hijo */
+.bottom-left a {
+  display: block;
+  margin-bottom: 5px; /* Espacio entre los elementos */
+}
+
+/* Estilo para el botón de contacto */
+.contact-btn {
+  display: flex;
+  align-items: center;
+  background-color: #007bff; /* Color de fondo del botón */
+  padding: 8px 12px; /* Espaciado interno */
+  border-radius: 20px; /* Forma redondeada del botón */
+  margin-top: 10px; /* Espaciado desde la imagen */
+  text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+/* Estilo para el texto del botón */
+.white-text {
+  color: white; /* Color del texto */
+  margin-right: 8px; /* Espaciado entre el texto y el ícono */
+}
+
+/* Estilo para el ícono */
+.contact-btn i {
+  color: white; /* Color del ícono */
+}
+/* Estilo para la lista */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Estilo para el enlace */
+li a {
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #007bff;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para el ícono */
+.material-icons {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* Estilo al pasar el mouse sobre el enlace */
+li a:hover {
+  background-color: #0056b3;
 }
