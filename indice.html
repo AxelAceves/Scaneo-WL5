@@ -1,30 +1,70 @@
-
-
 <html lang="es">
-
 <head>
   <title>Neurona de ALSW</title>
-  <!-- p5 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-  <!-- ml5 -->
   <script src="https://unpkg.com/ml5@0.5.0/dist/ml5.min.js" type="text/javascript"></script>
-  <!-- Icon Google-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Se ve bien movil -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-  <!-- Mi codigo -->
-  <script src="sketch.js"></script>
 </head>
 <body>
 
 
   <div class="container">
+    
+         <!-- Cabezera -->
+    <div class="row">
+      <div class="col s12">
+        <div class="card teal darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Red neuronal</span>
+            <p>Neurona clasificadora de imagenes implementa en ML5 , css , html , javascript , php</p>
+            <h5>
+            <a href="https://github.com/AxelAceves/Scaneo-WL5/tree/main" target="_blank" class="waves-effect waves-light btn BotonEntrenar orange">
+  <i class="fab fa-github"></i> Ir a GitHub
+</a></h5>
+            
+MENU
+  <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="https://media.giphy.com/media/3og0IFrHkIglEOg8Ba/giphy.gif">
+      </div>
+<a href="#user" class="corner-image">
+  <img class="circle" src="https://avatars.githubusercontent.com/u/149019864?v=4">
+  <div class="bottom-left">
+    <a href="#name"><span class="white-text name">Axel Programador Alumno</span></a>
+    <a href="#email" class="contact-btn">
+       <i class="fa fa-envelope"></i>
+    <span class="white-text email">avastr69@gmail.com</span>
+  </a>
+  </div>
+</a>
 
-    <!-- Cabezera -->
+    </div></li>
+   <ul>
+  <li>
+    <a href="https://github.com/AxelAceves">
+      <i class="material-icons">person</i>
+      Perfil
+    </a>
+  </li>
+</ul>
+<center>
+   <li><a  id="cerrarSidebar">Cerrar</a></li>
+</center>
+  </ul>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        
+          </div>       
+        </div>
+      </div>
+         <div class="separator"></div>
+    </div>
+    
+
+
     <div class="row z-depth-1 grey lighten-2">
       <div class="card z-depth-5">
         <!-- Bara izquierda -->
@@ -46,10 +86,7 @@
           <div class="section center-align">
           <div class="separator"></div>
 
-            <h5>Informacion : 
-            <a href="https://github.com/AxelAceves/Scaneo-WL5/tree/main" target="_blank" class="waves-effect waves-light btn BotonEntrenar orange">
-  <i class="fab fa-github"></i> Ir a GitHub
-</a></h5>
+           
 
             <div class="input-field">
               <i class="material-icons prefix">add_circle_outline</i>
@@ -66,13 +103,17 @@
           <div class="section center-align">
             <h5>Operaciones Neurona</h5>
            <div class="center-align">
-              <a id="CargarBoton" class="waves-effect waves-light ">Cargar</a>
+              <a id="CargarBoton" class="waves-effect waves-light btn BotonEntrenar orange">Cargar</a>
               <a id="SalvarBoton" class="waves-effect waves-light btn BotonEntrenar orange">Salvar</a>
               <a id="LimpiarBoton" class="waves-effect waves-light btn BotonEntrenar orange">Limpiar</a>
               <a id="CargarFolder" class="waves-effect waves-light btn BotonEntrenar orange">Folder</a>
             </div>
 
           </div>
+          <div class="separator"></div>
+          
+          
+          
         </div>
 
         <div class="col s8 teal darken-4 center-align">
@@ -81,8 +122,11 @@
           </div>
           <div id="micanva">
           </div>
+          
         </div>
+    
       </div>
+      
     </div>
 
   
